@@ -1,0 +1,11 @@
+# GetPingServiceEndpointsResponse
+
+
+## Fields
+
+| Field                                                                 | Type                                                                  | Required                                                              | Description                                                           | Example                                                               |
+| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| `contentType`                                                         | *string*                                                              | :heavy_check_mark:                                                    | HTTP response content type for this operation                         |                                                                       |
+| `discoveryResponse`                                                   | [models.DiscoveryResponse](../models/discoveryresponse.md)[]          | :heavy_minus_sign:                                                    | Ok                                                                    | [<br/>{<br/>"region": "Seattle",<br/>"host": "ping.hathora.dev",<br/>"port": 2000<br/>}<br/>] |
+| `statusCode`                                                          | *number*                                                              | :heavy_check_mark:                                                    | HTTP response status code for this operation                          |                                                                       |
+| `rawResponse`                                                         | [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) | :heavy_check_mark:                                                    | Raw HTTP response; suitable for custom response parsing               |                                                                       |

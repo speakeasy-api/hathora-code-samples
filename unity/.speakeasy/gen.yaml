@@ -1,0 +1,28 @@
+configVersion: 2.0.0
+generation:
+  sdkClassName: Hathora-Cloud-SDK
+  usageSnippets:
+    optionalPropertyRendering: withExample
+  fixes:
+    nameResolutionDec2023: false
+    parameterOrderingFeb2024: false
+    requestResponseComponentNamesFeb2024: false
+  auth:
+    oAuth2ClientCredentialsEnabled: false
+unity:
+  version: 0.28.4
+  author: Hathora
+  dotnetVersion: net5.0
+  flattenGlobalSecurity: false
+  imports:
+    option: openapi
+    paths:
+      callbacks: Models/Callbacks
+      errors: Models/Errors
+      operations: Models/Operations
+      shared: Models/Shared
+      webhooks: Models/Webhooks
+  inputModelSuffix: input
+  maxMethodParams: 0
+  outputModelSuffix: output
+  packageName: hathora-cloud

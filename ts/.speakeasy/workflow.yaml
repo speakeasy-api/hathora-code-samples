@@ -1,0 +1,11 @@
+workflowVersion: 1.0.0
+sources:
+    openapi:
+        inputs:
+            - location: https://hathora.dev/swagger.json
+targets:
+    first-target:
+        target: typescript
+        source: openapi
+        codeSamples:
+            output: codeSamples.yaml

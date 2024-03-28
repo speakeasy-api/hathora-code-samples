@@ -1,0 +1,34 @@
+configVersion: 2.0.0
+generation:
+  sdkClassName: Hathora-Cloud
+  usageSnippets:
+    optionalPropertyRendering: withExample
+  fixes:
+    nameResolutionDec2023: false
+    parameterOrderingFeb2024: false
+    requestResponseComponentNamesFeb2024: false
+  auth:
+    oAuth2ClientCredentialsEnabled: false
+typescript:
+  version: 2.3.0
+  additionalDependencies:
+    dependencies: {}
+    devDependencies: {}
+    peerDependencies: {}
+  author: Hathora
+  clientServerStatusCodesAsErrors: true
+  flattenGlobalSecurity: false
+  imports:
+    option: openapi
+    paths:
+      callbacks: ""
+      errors: ""
+      operations: ""
+      shared: ""
+      webhooks: ""
+  inputModelSuffix: input
+  maxMethodParams: 3
+  outputModelSuffix: output
+  packageName: '@hathora/cloud-sdk-typescript'
+  responseFormat: envelope
+  templateVersion: v2

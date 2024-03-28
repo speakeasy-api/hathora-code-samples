@@ -1,0 +1,37 @@
+configVersion: 2.0.0
+generation:
+  sdkClassName: Hathora-Cloud
+  usageSnippets:
+    optionalPropertyRendering: withExample
+  fixes:
+    nameResolutionDec2023: false
+    parameterOrderingFeb2024: false
+    requestResponseComponentNamesFeb2024: false
+  auth:
+    oAuth2ClientCredentialsEnabled: false
+  baseServerURL: ""
+  flattenGlobalSecurity: true
+java:
+  version: 2.3.0
+  additionalDependencies: []
+  artifactID: cloud-api
+  companyEmail: info@mycompany.com
+  companyName: My Company
+  companyURL: www.mycompany.com
+  flattenGlobalSecurity: false
+  githubURL: github.com/owner/repo
+  groupID: dev.hathora
+  imports:
+    option: openapi
+    paths:
+      callbacks: models/callbacks
+      errors: models/errors
+      operations: models/operations
+      shared: models/shared
+      webhooks: models/webhooks
+  inputModelSuffix: input
+  maxMethodParams: 3
+  ossrhURL: https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/
+  outputModelSuffix: output
+  projectName: Hathora-Cloud
+  templateVersion: v2
