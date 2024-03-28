@@ -1,0 +1,3245 @@
+overlay: 1.0.0
+info:
+  title: CodeSamples overlay for .speakeasy/temp/output_tudSUQOBAl.json
+  version: 0.0.0
+actions:
+  - target: $["paths"]["/processes/v1/{appId}/list/running"]["get"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: GetRunningProcesses
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.GetRunningProcessesRequest;
+            import dev.hathora.cloud_api.models.operations.GetRunningProcessesResponse;
+            import dev.hathora.cloud_api.models.shared.*;
+            import dev.hathora.cloud_api.models.shared.Region;
+            import dev.hathora.cloud_api.models.shared.Security;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .security(Security.builder()
+                                .hathoraDevToken("<YOUR_BEARER_TOKEN_HERE>")
+                                .build())
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        GetRunningProcessesResponse res = sdk.getRunningProcesses()
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .region(Region.SINGAPORE)
+                            .call();
+
+                        if (res.classes().isPresent()) {
+                            // handle response
+                        }
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/rooms/v1/{appId}/info/{roomId}"]["get"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: GetRoomInfoDeprecated
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.GetRoomInfoDeprecatedRequest;
+            import dev.hathora.cloud_api.models.operations.GetRoomInfoDeprecatedResponse;
+            import dev.hathora.cloud_api.models.shared.*;
+            import dev.hathora.cloud_api.models.shared.Security;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .security(Security.builder()
+                                .hathoraDevToken("<YOUR_BEARER_TOKEN_HERE>")
+                                .build())
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        GetRoomInfoDeprecatedResponse res = sdk.getRoomInfoDeprecated()
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .roomId("2swovpy1fnunu")
+                            .call();
+
+                        if (res.room().isPresent()) {
+                            // handle response
+                        }
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/rooms/v2/{appId}/info/{roomId}"]["get"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: GetRoomInfo
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.GetRoomInfoRequest;
+            import dev.hathora.cloud_api.models.operations.GetRoomInfoResponse;
+            import dev.hathora.cloud_api.models.shared.*;
+            import dev.hathora.cloud_api.models.shared.Security;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .security(Security.builder()
+                                .hathoraDevToken("<YOUR_BEARER_TOKEN_HERE>")
+                                .build())
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        GetRoomInfoResponse res = sdk.getRoomInfo()
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .roomId("2swovpy1fnunu")
+                            .call();
+
+                        if (res.room().isPresent()) {
+                            // handle response
+                        }
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/apps/v1/create"]["post"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: CreateApp
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.CreateAppResponse;
+            import dev.hathora.cloud_api.models.shared.*;
+            import dev.hathora.cloud_api.models.shared.AppConfig;
+            import dev.hathora.cloud_api.models.shared.AuthConfiguration;
+            import dev.hathora.cloud_api.models.shared.Google;
+            import dev.hathora.cloud_api.models.shared.RecordStringNever;
+            import dev.hathora.cloud_api.models.shared.Security;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .security(Security.builder()
+                                .hathoraDevToken("<YOUR_BEARER_TOKEN_HERE>")
+                                .build())
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        AppConfig req = AppConfig.builder()
+                            .appName("minecraft")
+                            .authConfiguration(AuthConfiguration.builder()
+                                    .anonymous(RecordStringNever.builder()
+                                        .build())
+                                    .google(Google.builder()
+                                        .clientId("<value>")
+                                        .build())
+                                    .nickname(RecordStringNever.builder()
+                                        .build())
+                                    .build())
+                            .build();
+
+                        CreateAppResponse res = sdk.createApp()
+                            .request(req)
+                            .call();
+
+                        if (res.application().isPresent()) {
+                            // handle response
+                        }
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/deployments/v1/{appId}/create/{buildId}"]["post"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: CreateDeployment
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.CreateDeploymentRequest;
+            import dev.hathora.cloud_api.models.operations.CreateDeploymentResponse;
+            import dev.hathora.cloud_api.models.shared.*;
+            import dev.hathora.cloud_api.models.shared.ContainerPort;
+            import dev.hathora.cloud_api.models.shared.DeploymentConfig;
+            import dev.hathora.cloud_api.models.shared.DeploymentConfigEnv;
+            import dev.hathora.cloud_api.models.shared.PlanName;
+            import dev.hathora.cloud_api.models.shared.Security;
+            import dev.hathora.cloud_api.models.shared.TransportType;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .security(Security.builder()
+                                .hathoraDevToken("<YOUR_BEARER_TOKEN_HERE>")
+                                .build())
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        CreateDeploymentResponse res = sdk.createDeployment()
+                            .deploymentConfig(DeploymentConfig.builder()
+                                .containerPort(4000)
+                                .env(java.util.List.of(
+                                        DeploymentConfigEnv.builder()
+                                            .name("EULA")
+                                            .value("TRUE")
+                                            .build()))
+                                .planName(PlanName.TINY)
+                                .roomsPerProcess(3)
+                                .transportType(TransportType.TCP)
+                                .build())
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .buildId(1)
+                            .call();
+
+                        if (res.deployment().isPresent()) {
+                            // handle response
+                        }
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/deployments/v1/{appId}/list"]["get"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: GetDeployments
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.GetDeploymentsRequest;
+            import dev.hathora.cloud_api.models.operations.GetDeploymentsResponse;
+            import dev.hathora.cloud_api.models.shared.*;
+            import dev.hathora.cloud_api.models.shared.Security;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .security(Security.builder()
+                                .hathoraDevToken("<YOUR_BEARER_TOKEN_HERE>")
+                                .build())
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        GetDeploymentsResponse res = sdk.getDeployments()
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .call();
+
+                        if (res.classes().isPresent()) {
+                            // handle response
+                        }
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/lobby/v2/{appId}/create/public"]["post"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: CreatePublicLobby
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.CreatePublicLobbyRequest;
+            import dev.hathora.cloud_api.models.operations.CreatePublicLobbyRequestBody;
+            import dev.hathora.cloud_api.models.operations.CreatePublicLobbyResponse;
+            import dev.hathora.cloud_api.models.operations.CreatePublicLobbySecurity;
+            import dev.hathora.cloud_api.models.shared.*;
+            import dev.hathora.cloud_api.models.shared.LobbyInitialConfig;
+            import dev.hathora.cloud_api.models.shared.Region;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        CreatePublicLobbyResponse res = sdk.createPublicLobby()
+                            .security(CreatePublicLobbySecurity.builder()
+                                .playerAuth("<YOUR_BEARER_TOKEN_HERE>")
+                                .build())
+                            .requestBody(CreatePublicLobbyRequestBody.builder()
+                                .initialConfig(LobbyInitialConfig.builder()
+                                        .build())
+                                .region(Region.WASHINGTON_DC)
+                                .build())
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .roomId("2swovpy1fnunu")
+                            .call();
+
+                        if (res.lobby().isPresent()) {
+                            // handle response
+                        }
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/lobby/v3/{appId}/info/roomid/{roomId}"]["get"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: GetLobbyInfoByRoomId
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.GetLobbyInfoByRoomIdRequest;
+            import dev.hathora.cloud_api.models.operations.GetLobbyInfoByRoomIdResponse;
+            import dev.hathora.cloud_api.models.shared.*;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        GetLobbyInfoByRoomIdResponse res = sdk.getLobbyInfoByRoomId()
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .roomId("2swovpy1fnunu")
+                            .call();
+
+                        if (res.lobbyV3().isPresent()) {
+                            // handle response
+                        }
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/apps/v1/update/{appId}"]["post"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: UpdateApp
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.UpdateAppRequest;
+            import dev.hathora.cloud_api.models.operations.UpdateAppResponse;
+            import dev.hathora.cloud_api.models.shared.*;
+            import dev.hathora.cloud_api.models.shared.AppConfig;
+            import dev.hathora.cloud_api.models.shared.AuthConfiguration;
+            import dev.hathora.cloud_api.models.shared.Google;
+            import dev.hathora.cloud_api.models.shared.RecordStringNever;
+            import dev.hathora.cloud_api.models.shared.Security;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .security(Security.builder()
+                                .hathoraDevToken("<YOUR_BEARER_TOKEN_HERE>")
+                                .build())
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        UpdateAppResponse res = sdk.updateApp()
+                            .appConfig(AppConfig.builder()
+                                .appName("minecraft")
+                                .authConfiguration(AuthConfiguration.builder()
+                                        .anonymous(RecordStringNever.builder()
+                                            .build())
+                                        .google(Google.builder()
+                                            .clientId("<value>")
+                                            .build())
+                                        .nickname(RecordStringNever.builder()
+                                            .build())
+                                        .build())
+                                .build())
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .call();
+
+                        if (res.application().isPresent()) {
+                            // handle response
+                        }
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/auth/v1/{appId}/login/anonymous"]["post"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: LoginAnonymous
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.LoginAnonymousRequest;
+            import dev.hathora.cloud_api.models.operations.LoginAnonymousResponse;
+            import dev.hathora.cloud_api.models.shared.*;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        LoginAnonymousResponse res = sdk.loginAnonymous()
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .call();
+
+                        if (res.loginResponse().isPresent()) {
+                            // handle response
+                        }
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/tokens/v1/orgs/{orgId}"]["get"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: GetOrgTokens
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.GetOrgTokensRequest;
+            import dev.hathora.cloud_api.models.operations.GetOrgTokensResponse;
+            import dev.hathora.cloud_api.models.shared.*;
+            import dev.hathora.cloud_api.models.shared.Security;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .security(Security.builder()
+                                .hathoraDevToken("<YOUR_BEARER_TOKEN_HERE>")
+                                .build())
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        GetOrgTokensResponse res = sdk.getOrgTokens()
+                            .orgId("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39")
+                            .call();
+
+                        if (res.listOrgTokens().isPresent()) {
+                            // handle response
+                        }
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/builds/v1/{appId}/list"]["get"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: GetBuilds
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.GetBuildsRequest;
+            import dev.hathora.cloud_api.models.operations.GetBuildsResponse;
+            import dev.hathora.cloud_api.models.shared.*;
+            import dev.hathora.cloud_api.models.shared.Security;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .security(Security.builder()
+                                .hathoraDevToken("<YOUR_BEARER_TOKEN_HERE>")
+                                .build())
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        GetBuildsResponse res = sdk.getBuilds()
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .call();
+
+                        if (res.classes().isPresent()) {
+                            // handle response
+                        }
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/metrics/v1/{appId}/process/{processId}"]["get"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: GetMetrics
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.GetMetricsRequest;
+            import dev.hathora.cloud_api.models.operations.GetMetricsResponse;
+            import dev.hathora.cloud_api.models.shared.*;
+            import dev.hathora.cloud_api.models.shared.MetricName;
+            import dev.hathora.cloud_api.models.shared.Security;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .security(Security.builder()
+                                .hathoraDevToken("<YOUR_BEARER_TOKEN_HERE>")
+                                .build())
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        GetMetricsRequest req = GetMetricsRequest.builder()
+                            .processId("cbfcddd2-0006-43ae-996c-995fff7bed2e")
+                            .end(5456.86d)
+                            .metrics(java.util.List.of(
+                                MetricName.MEMORY))
+                            .start(4311.13d)
+                            .step(490659)
+                            .build();
+
+                        GetMetricsResponse res = sdk.getMetrics()
+                            .request(req)
+                            .call();
+
+                        if (res.metricsResponse().isPresent()) {
+                            // handle response
+                        }
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/builds/v1/{appId}/run/{buildId}"]["post"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: RunBuild
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.File;
+            import dev.hathora.cloud_api.models.operations.RunBuildRequest;
+            import dev.hathora.cloud_api.models.operations.RunBuildRequestBody;
+            import dev.hathora.cloud_api.models.operations.RunBuildResponse;
+            import dev.hathora.cloud_api.models.shared.*;
+            import dev.hathora.cloud_api.models.shared.Security;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .security(Security.builder()
+                                .hathoraDevToken("<YOUR_BEARER_TOKEN_HERE>")
+                                .build())
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        RunBuildResponse res = sdk.runBuild()
+                            .requestBody(RunBuildRequestBody.builder()
+                                .file(File.builder()
+                                        .content("0xCb8B3aFD88".getBytes())
+                                        .fileName("<value>")
+                                        .build())
+                                .build())
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .buildId(1)
+                            .call();
+
+                        if (res.res().isPresent()) {
+                            // handle response
+                        }
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/rooms/v1/{appId}/create"]["post"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: CreateRoomDeprecated
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.CreateRoomDeprecatedRequest;
+            import dev.hathora.cloud_api.models.operations.CreateRoomDeprecatedResponse;
+            import dev.hathora.cloud_api.models.shared.*;
+            import dev.hathora.cloud_api.models.shared.CreateRoomParams;
+            import dev.hathora.cloud_api.models.shared.Region;
+            import dev.hathora.cloud_api.models.shared.Security;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .security(Security.builder()
+                                .hathoraDevToken("<YOUR_BEARER_TOKEN_HERE>")
+                                .build())
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        CreateRoomDeprecatedResponse res = sdk.createRoomDeprecated()
+                            .createRoomParams(CreateRoomParams.builder()
+                                .region(Region.SINGAPORE)
+                                .roomConfig("{\"name\":\"my-room\"}")
+                                .build())
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .roomId("2swovpy1fnunu")
+                            .call();
+
+                        if (res.roomId().isPresent()) {
+                            // handle response
+                        }
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/apps/v1/info/{appId}"]["get"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: GetAppInfo
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.GetAppInfoRequest;
+            import dev.hathora.cloud_api.models.operations.GetAppInfoResponse;
+            import dev.hathora.cloud_api.models.shared.*;
+            import dev.hathora.cloud_api.models.shared.Security;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .security(Security.builder()
+                                .hathoraDevToken("<YOUR_BEARER_TOKEN_HERE>")
+                                .build())
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        GetAppInfoResponse res = sdk.getAppInfo()
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .call();
+
+                        if (res.application().isPresent()) {
+                            // handle response
+                        }
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/apps/v1/list"]["get"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: GetApps
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.GetAppsResponse;
+            import dev.hathora.cloud_api.models.shared.*;
+            import dev.hathora.cloud_api.models.shared.Security;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .security(Security.builder()
+                                .hathoraDevToken("<YOUR_BEARER_TOKEN_HERE>")
+                                .build())
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        GetAppsResponse res = sdk.getApps()
+                            .call();
+
+                        if (res.classes().isPresent()) {
+                            // handle response
+                        }
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/lobby/v1/{appId}/create/public"]["post"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: CreatePublicLobbyDeprecated
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.CreatePublicLobbyDeprecatedRequest;
+            import dev.hathora.cloud_api.models.operations.CreatePublicLobbyDeprecatedResponse;
+            import dev.hathora.cloud_api.models.operations.CreatePublicLobbyDeprecatedSecurity;
+            import dev.hathora.cloud_api.models.shared.*;
+            import dev.hathora.cloud_api.models.shared.Region;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        CreatePublicLobbyDeprecatedResponse res = sdk.createPublicLobbyDeprecated()
+                            .security(CreatePublicLobbyDeprecatedSecurity.builder()
+                                .playerAuth("<YOUR_BEARER_TOKEN_HERE>")
+                                .build())
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .local(false)
+                            .region(Region.LONDON)
+                            .call();
+
+                        if (res.roomId().isPresent()) {
+                            // handle response
+                        }
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/lobby/v3/{appId}/info/shortcode/{shortCode}"]["get"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: GetLobbyInfoByShortCode
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.GetLobbyInfoByShortCodeRequest;
+            import dev.hathora.cloud_api.models.operations.GetLobbyInfoByShortCodeResponse;
+            import dev.hathora.cloud_api.models.shared.*;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        GetLobbyInfoByShortCodeResponse res = sdk.getLobbyInfoByShortCode()
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .shortCode("LFG4")
+                            .call();
+
+                        if (res.lobbyV3().isPresent()) {
+                            // handle response
+                        }
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/logs/v1/{appId}/all"]["get"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: GetLogsForApp
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.GetLogsForAppRequest;
+            import dev.hathora.cloud_api.models.operations.GetLogsForAppResponse;
+            import dev.hathora.cloud_api.models.shared.*;
+            import dev.hathora.cloud_api.models.shared.Region;
+            import dev.hathora.cloud_api.models.shared.Security;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .security(Security.builder()
+                                .hathoraDevToken("<YOUR_BEARER_TOKEN_HERE>")
+                                .build())
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        GetLogsForAppRequest req = GetLogsForAppRequest.builder()
+                            .follow(false)
+                            .region(Region.SINGAPORE)
+                            .tailLines(100)
+                            .build();
+
+                        GetLogsForAppResponse res = sdk.getLogsForApp()
+                            .request(req)
+                            .call();
+
+                        if (res.res().isPresent()) {
+                            // handle response
+                        }
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/discovery/v1/ping"]["get"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: GetPingServiceEndpoints
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.GetPingServiceEndpointsResponse;
+            import dev.hathora.cloud_api.models.shared.*;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        GetPingServiceEndpointsResponse res = sdk.getPingServiceEndpoints()
+                            .call();
+
+                        if (res.discoveryResponse().isPresent()) {
+                            // handle response
+                        }
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/lobby/v2/{appId}/create/private"]["post"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: CreatePrivateLobby
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.CreatePrivateLobbyRequest;
+            import dev.hathora.cloud_api.models.operations.CreatePrivateLobbyRequestBody;
+            import dev.hathora.cloud_api.models.operations.CreatePrivateLobbyResponse;
+            import dev.hathora.cloud_api.models.operations.CreatePrivateLobbySecurity;
+            import dev.hathora.cloud_api.models.shared.*;
+            import dev.hathora.cloud_api.models.shared.LobbyInitialConfig;
+            import dev.hathora.cloud_api.models.shared.Region;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        CreatePrivateLobbyResponse res = sdk.createPrivateLobby()
+                            .security(CreatePrivateLobbySecurity.builder()
+                                .playerAuth("<YOUR_BEARER_TOKEN_HERE>")
+                                .build())
+                            .requestBody(CreatePrivateLobbyRequestBody.builder()
+                                .initialConfig(LobbyInitialConfig.builder()
+                                        .build())
+                                .region(Region.LOS_ANGELES)
+                                .build())
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .roomId("2swovpy1fnunu")
+                            .call();
+
+                        if (res.lobby().isPresent()) {
+                            // handle response
+                        }
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/rooms/v2/{appId}/list/{processId}/active"]["get"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: GetActiveRoomsForProcess
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.GetActiveRoomsForProcessRequest;
+            import dev.hathora.cloud_api.models.operations.GetActiveRoomsForProcessResponse;
+            import dev.hathora.cloud_api.models.shared.*;
+            import dev.hathora.cloud_api.models.shared.Security;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .security(Security.builder()
+                                .hathoraDevToken("<YOUR_BEARER_TOKEN_HERE>")
+                                .build())
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        GetActiveRoomsForProcessResponse res = sdk.getActiveRoomsForProcess()
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .processId("cbfcddd2-0006-43ae-996c-995fff7bed2e")
+                            .call();
+
+                        if (res.classes().isPresent()) {
+                            // handle response
+                        }
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/tokens/v1/orgs/{orgId}/tokens/{orgTokenId}/revoke"]["post"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: RevokeOrgToken
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.RevokeOrgTokenRequest;
+            import dev.hathora.cloud_api.models.operations.RevokeOrgTokenResponse;
+            import dev.hathora.cloud_api.models.shared.*;
+            import dev.hathora.cloud_api.models.shared.Security;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .security(Security.builder()
+                                .hathoraDevToken("<YOUR_BEARER_TOKEN_HERE>")
+                                .build())
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        RevokeOrgTokenResponse res = sdk.revokeOrgToken()
+                            .orgId("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39")
+                            .orgTokenId("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39")
+                            .call();
+
+                        if (res.boolean_().isPresent()) {
+                            // handle response
+                        }
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/rooms/v1/{appId}/suspend/{roomId}"]["post"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: SuspendRoomDeprecated
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.SuspendRoomDeprecatedRequest;
+            import dev.hathora.cloud_api.models.operations.SuspendRoomDeprecatedResponse;
+            import dev.hathora.cloud_api.models.shared.*;
+            import dev.hathora.cloud_api.models.shared.Security;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .security(Security.builder()
+                                .hathoraDevToken("<YOUR_BEARER_TOKEN_HERE>")
+                                .build())
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        SuspendRoomDeprecatedResponse res = sdk.suspendRoomDeprecated()
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .roomId("2swovpy1fnunu")
+                            .call();
+
+                        // handle response
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/rooms/v2/{appId}/create"]["post"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: CreateRoom
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.CreateRoomRequest;
+            import dev.hathora.cloud_api.models.operations.CreateRoomResponse;
+            import dev.hathora.cloud_api.models.shared.*;
+            import dev.hathora.cloud_api.models.shared.CreateRoomParams;
+            import dev.hathora.cloud_api.models.shared.Region;
+            import dev.hathora.cloud_api.models.shared.Security;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .security(Security.builder()
+                                .hathoraDevToken("<YOUR_BEARER_TOKEN_HERE>")
+                                .build())
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        CreateRoomResponse res = sdk.createRoom()
+                            .createRoomParams(CreateRoomParams.builder()
+                                .region(Region.TOKYO)
+                                .roomConfig("{\"name\":\"my-room\"}")
+                                .build())
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .roomId("2swovpy1fnunu")
+                            .call();
+
+                        if (res.createRoomResponse().isPresent()) {
+                            // handle response
+                        }
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/rooms/v2/{appId}/list/{processId}/inactive"]["get"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: GetInactiveRoomsForProcess
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.GetInactiveRoomsForProcessRequest;
+            import dev.hathora.cloud_api.models.operations.GetInactiveRoomsForProcessResponse;
+            import dev.hathora.cloud_api.models.shared.*;
+            import dev.hathora.cloud_api.models.shared.Security;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .security(Security.builder()
+                                .hathoraDevToken("<YOUR_BEARER_TOKEN_HERE>")
+                                .build())
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        GetInactiveRoomsForProcessResponse res = sdk.getInactiveRoomsForProcess()
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .processId("cbfcddd2-0006-43ae-996c-995fff7bed2e")
+                            .call();
+
+                        if (res.classes().isPresent()) {
+                            // handle response
+                        }
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/auth/v1/{appId}/login/nickname"]["post"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: LoginNickname
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.LoginNicknameRequest;
+            import dev.hathora.cloud_api.models.operations.LoginNicknameResponse;
+            import dev.hathora.cloud_api.models.shared.*;
+            import dev.hathora.cloud_api.models.shared.LoginNicknameRequest;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        LoginNicknameResponse res = sdk.loginNickname()
+                            .loginNicknameRequest(LoginNicknameRequest.builder()
+                                .nickname("squiddytwoshoes")
+                                .build())
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .call();
+
+                        if (res.loginResponse().isPresent()) {
+                            // handle response
+                        }
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/billing/v1/customerportalurl"]["post"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: InitStripeCustomerPortalUrl
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.InitStripeCustomerPortalUrlResponse;
+            import dev.hathora.cloud_api.models.shared.*;
+            import dev.hathora.cloud_api.models.shared.CustomerPortalUrl;
+            import dev.hathora.cloud_api.models.shared.Security;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .security(Security.builder()
+                                .hathoraDevToken("<YOUR_BEARER_TOKEN_HERE>")
+                                .build())
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        CustomerPortalUrl req = CustomerPortalUrl.builder()
+                            .returnUrl("<value>")
+                            .build();
+
+                        InitStripeCustomerPortalUrlResponse res = sdk.initStripeCustomerPortalUrl()
+                            .request(req)
+                            .call();
+
+                        if (res.string().isPresent()) {
+                            // handle response
+                        }
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/rooms/v1/{appId}/list/{processId}/active"]["get"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: GetActiveRoomsForProcessDeprecated
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.GetActiveRoomsForProcessDeprecatedRequest;
+            import dev.hathora.cloud_api.models.operations.GetActiveRoomsForProcessDeprecatedResponse;
+            import dev.hathora.cloud_api.models.shared.*;
+            import dev.hathora.cloud_api.models.shared.Security;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .security(Security.builder()
+                                .hathoraDevToken("<YOUR_BEARER_TOKEN_HERE>")
+                                .build())
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        GetActiveRoomsForProcessDeprecatedResponse res = sdk.getActiveRoomsForProcessDeprecated()
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .processId("cbfcddd2-0006-43ae-996c-995fff7bed2e")
+                            .call();
+
+                        if (res.classes().isPresent()) {
+                            // handle response
+                        }
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/tokens/v1/orgs/{orgId}/create"]["post"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: CreateOrgToken
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.CreateOrgTokenRequest;
+            import dev.hathora.cloud_api.models.operations.CreateOrgTokenResponse;
+            import dev.hathora.cloud_api.models.shared.*;
+            import dev.hathora.cloud_api.models.shared.CreateOrgToken;
+            import dev.hathora.cloud_api.models.shared.Security;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .security(Security.builder()
+                                .hathoraDevToken("<YOUR_BEARER_TOKEN_HERE>")
+                                .build())
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        CreateOrgTokenResponse res = sdk.createOrgToken()
+                            .createOrgToken(CreateOrgToken.builder()
+                                .name("ci-token")
+                                .build())
+                            .orgId("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39")
+                            .call();
+
+                        if (res.createdOrgToken().isPresent()) {
+                            // handle response
+                        }
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/lobby/v1/{appId}/create/private"]["post"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: CreatePrivateLobbyDeprecated
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.CreatePrivateLobbyDeprecatedRequest;
+            import dev.hathora.cloud_api.models.operations.CreatePrivateLobbyDeprecatedResponse;
+            import dev.hathora.cloud_api.models.operations.CreatePrivateLobbyDeprecatedSecurity;
+            import dev.hathora.cloud_api.models.shared.*;
+            import dev.hathora.cloud_api.models.shared.Region;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        CreatePrivateLobbyDeprecatedResponse res = sdk.createPrivateLobbyDeprecated()
+                            .security(CreatePrivateLobbyDeprecatedSecurity.builder()
+                                .playerAuth("<YOUR_BEARER_TOKEN_HERE>")
+                                .build())
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .local(false)
+                            .region(Region.LONDON)
+                            .call();
+
+                        if (res.roomId().isPresent()) {
+                            // handle response
+                        }
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/logs/v1/{appId}/deployment/{deploymentId}"]["get"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: GetLogsForDeployment
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.GetLogsForDeploymentRequest;
+            import dev.hathora.cloud_api.models.operations.GetLogsForDeploymentResponse;
+            import dev.hathora.cloud_api.models.shared.*;
+            import dev.hathora.cloud_api.models.shared.Security;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .security(Security.builder()
+                                .hathoraDevToken("<YOUR_BEARER_TOKEN_HERE>")
+                                .build())
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        GetLogsForDeploymentRequest req = GetLogsForDeploymentRequest.builder()
+                            .deploymentId(1)
+                            .follow(false)
+                            .tailLines(100)
+                            .build();
+
+                        GetLogsForDeploymentResponse res = sdk.getLogsForDeployment()
+                            .request(req)
+                            .call();
+
+                        if (res.res().isPresent()) {
+                            // handle response
+                        }
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/processes/v1/{appId}/list/stopped"]["get"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: GetStoppedProcesses
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.GetStoppedProcessesRequest;
+            import dev.hathora.cloud_api.models.operations.GetStoppedProcessesResponse;
+            import dev.hathora.cloud_api.models.shared.*;
+            import dev.hathora.cloud_api.models.shared.Region;
+            import dev.hathora.cloud_api.models.shared.Security;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .security(Security.builder()
+                                .hathoraDevToken("<YOUR_BEARER_TOKEN_HERE>")
+                                .build())
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        GetStoppedProcessesResponse res = sdk.getStoppedProcesses()
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .region(Region.SYDNEY)
+                            .call();
+
+                        if (res.classes().isPresent()) {
+                            // handle response
+                        }
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/builds/v1/{appId}/info/{buildId}"]["get"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: GetBuildInfo
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.GetBuildInfoRequest;
+            import dev.hathora.cloud_api.models.operations.GetBuildInfoResponse;
+            import dev.hathora.cloud_api.models.shared.*;
+            import dev.hathora.cloud_api.models.shared.Security;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .security(Security.builder()
+                                .hathoraDevToken("<YOUR_BEARER_TOKEN_HERE>")
+                                .build())
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        GetBuildInfoResponse res = sdk.getBuildInfo()
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .buildId(1)
+                            .call();
+
+                        if (res.build().isPresent()) {
+                            // handle response
+                        }
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/lobby/v2/{appId}/create"]["post"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: CreateLobbyDeprecated
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.CreateLobbyDeprecatedRequest;
+            import dev.hathora.cloud_api.models.operations.CreateLobbyDeprecatedResponse;
+            import dev.hathora.cloud_api.models.operations.CreateLobbyDeprecatedSecurity;
+            import dev.hathora.cloud_api.models.shared.*;
+            import dev.hathora.cloud_api.models.shared.CreateLobbyParams;
+            import dev.hathora.cloud_api.models.shared.LobbyInitialConfig;
+            import dev.hathora.cloud_api.models.shared.LobbyVisibility;
+            import dev.hathora.cloud_api.models.shared.Region;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        CreateLobbyDeprecatedResponse res = sdk.createLobbyDeprecated()
+                            .security(CreateLobbyDeprecatedSecurity.builder()
+                                .playerAuth("<YOUR_BEARER_TOKEN_HERE>")
+                                .build())
+                            .createLobbyParams(CreateLobbyParams.builder()
+                                .initialConfig(LobbyInitialConfig.builder()
+                                        .build())
+                                .region(Region.CHICAGO)
+                                .visibility(LobbyVisibility.PRIVATE_)
+                                .build())
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .roomId("2swovpy1fnunu")
+                            .call();
+
+                        if (res.lobby().isPresent()) {
+                            // handle response
+                        }
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/lobby/v2/{appId}/list/public"]["get"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: ListActivePublicLobbiesDeprecatedV2
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.ListActivePublicLobbiesDeprecatedV2Request;
+            import dev.hathora.cloud_api.models.operations.ListActivePublicLobbiesDeprecatedV2Response;
+            import dev.hathora.cloud_api.models.shared.*;
+            import dev.hathora.cloud_api.models.shared.Region;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        ListActivePublicLobbiesDeprecatedV2Response res = sdk.listActivePublicLobbiesDeprecatedV2()
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .region(Region.FRANKFURT)
+                            .call();
+
+                        if (res.classes().isPresent()) {
+                            // handle response
+                        }
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/logs/v1/{appId}/process/{processId}/download"]["get"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: DownloadLogForProcess
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.DownloadLogForProcessRequest;
+            import dev.hathora.cloud_api.models.operations.DownloadLogForProcessResponse;
+            import dev.hathora.cloud_api.models.shared.*;
+            import dev.hathora.cloud_api.models.shared.Security;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .security(Security.builder()
+                                .hathoraDevToken("<YOUR_BEARER_TOKEN_HERE>")
+                                .build())
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        DownloadLogForProcessResponse res = sdk.downloadLogForProcess()
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .processId("cbfcddd2-0006-43ae-996c-995fff7bed2e")
+                            .call();
+
+                        if (res.res().isPresent()) {
+                            // handle response
+                        }
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/apps/v1/delete/{appId}"]["delete"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: DeleteApp
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.DeleteAppRequest;
+            import dev.hathora.cloud_api.models.operations.DeleteAppResponse;
+            import dev.hathora.cloud_api.models.shared.*;
+            import dev.hathora.cloud_api.models.shared.Security;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .security(Security.builder()
+                                .hathoraDevToken("<YOUR_BEARER_TOKEN_HERE>")
+                                .build())
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        DeleteAppResponse res = sdk.deleteApp()
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .call();
+
+                        // handle response
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/builds/v1/{appId}/delete/{buildId}"]["delete"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: DeleteBuild
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.DeleteBuildRequest;
+            import dev.hathora.cloud_api.models.operations.DeleteBuildResponse;
+            import dev.hathora.cloud_api.models.shared.*;
+            import dev.hathora.cloud_api.models.shared.Security;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .security(Security.builder()
+                                .hathoraDevToken("<YOUR_BEARER_TOKEN_HERE>")
+                                .build())
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        DeleteBuildResponse res = sdk.deleteBuild()
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .buildId(1)
+                            .call();
+
+                        // handle response
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/processes/v2/{appId}/create/{region}"]["post"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: CreateProcess
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.CreateProcessRequest;
+            import dev.hathora.cloud_api.models.operations.CreateProcessResponse;
+            import dev.hathora.cloud_api.models.shared.*;
+            import dev.hathora.cloud_api.models.shared.Region;
+            import dev.hathora.cloud_api.models.shared.Security;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .security(Security.builder()
+                                .hathoraDevToken("<YOUR_BEARER_TOKEN_HERE>")
+                                .build())
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        CreateProcessResponse res = sdk.createProcess()
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .region(Region.TOKYO)
+                            .call();
+
+                        if (res.processV2().isPresent()) {
+                            // handle response
+                        }
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/deployments/v1/{appId}/info/{deploymentId}"]["get"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: GetDeploymentInfo
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.GetDeploymentInfoRequest;
+            import dev.hathora.cloud_api.models.operations.GetDeploymentInfoResponse;
+            import dev.hathora.cloud_api.models.shared.*;
+            import dev.hathora.cloud_api.models.shared.Security;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .security(Security.builder()
+                                .hathoraDevToken("<YOUR_BEARER_TOKEN_HERE>")
+                                .build())
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        GetDeploymentInfoResponse res = sdk.getDeploymentInfo()
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .deploymentId(1)
+                            .call();
+
+                        if (res.deployment().isPresent()) {
+                            // handle response
+                        }
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/billing/v1/paymentmethod"]["get"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: GetPaymentMethod
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.GetPaymentMethodResponse;
+            import dev.hathora.cloud_api.models.shared.*;
+            import dev.hathora.cloud_api.models.shared.Security;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .security(Security.builder()
+                                .hathoraDevToken("<YOUR_BEARER_TOKEN_HERE>")
+                                .build())
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        GetPaymentMethodResponse res = sdk.getPaymentMethod()
+                            .call();
+
+                        if (res.paymentMethod().isPresent()) {
+                            // handle response
+                        }
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/management/v1/sendverificationemail"]["post"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: SendVerificationEmail
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.SendVerificationEmailResponse;
+            import dev.hathora.cloud_api.models.shared.*;
+            import dev.hathora.cloud_api.models.shared.VerificationEmailRequest;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        VerificationEmailRequest req = VerificationEmailRequest.builder()
+                            .userId("<value>")
+                            .build();
+
+                        SendVerificationEmailResponse res = sdk.sendVerificationEmail()
+                            .request(req)
+                            .call();
+
+                        if (res.verificationEmailResponse().isPresent()) {
+                            // handle response
+                        }
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/processes/v2/{appId}/stop/{processId}"]["post"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: StopProcess
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.StopProcessRequest;
+            import dev.hathora.cloud_api.models.operations.StopProcessResponse;
+            import dev.hathora.cloud_api.models.shared.*;
+            import dev.hathora.cloud_api.models.shared.Security;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .security(Security.builder()
+                                .hathoraDevToken("<YOUR_BEARER_TOKEN_HERE>")
+                                .build())
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        StopProcessResponse res = sdk.stopProcess()
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .processId("cbfcddd2-0006-43ae-996c-995fff7bed2e")
+                            .call();
+
+                        // handle response
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/rooms/v1/{appId}/destroy/{roomId}"]["post"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: DestroyRoomDeprecated
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.DestroyRoomDeprecatedRequest;
+            import dev.hathora.cloud_api.models.operations.DestroyRoomDeprecatedResponse;
+            import dev.hathora.cloud_api.models.shared.*;
+            import dev.hathora.cloud_api.models.shared.Security;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .security(Security.builder()
+                                .hathoraDevToken("<YOUR_BEARER_TOKEN_HERE>")
+                                .build())
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        DestroyRoomDeprecatedResponse res = sdk.destroyRoomDeprecated()
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .roomId("2swovpy1fnunu")
+                            .call();
+
+                        // handle response
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/rooms/v2/{appId}/destroy/{roomId}"]["post"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: DestroyRoom
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.DestroyRoomRequest;
+            import dev.hathora.cloud_api.models.operations.DestroyRoomResponse;
+            import dev.hathora.cloud_api.models.shared.*;
+            import dev.hathora.cloud_api.models.shared.Security;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .security(Security.builder()
+                                .hathoraDevToken("<YOUR_BEARER_TOKEN_HERE>")
+                                .build())
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        DestroyRoomResponse res = sdk.destroyRoom()
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .roomId("2swovpy1fnunu")
+                            .call();
+
+                        // handle response
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/rooms/v2/{appId}/suspend/{roomId}"]["post"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: SuspendRoom
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.SuspendRoomRequest;
+            import dev.hathora.cloud_api.models.operations.SuspendRoomResponse;
+            import dev.hathora.cloud_api.models.shared.*;
+            import dev.hathora.cloud_api.models.shared.Security;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .security(Security.builder()
+                                .hathoraDevToken("<YOUR_BEARER_TOKEN_HERE>")
+                                .build())
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        SuspendRoomResponse res = sdk.suspendRoom()
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .roomId("2swovpy1fnunu")
+                            .call();
+
+                        // handle response
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/rooms/v2/{appId}/update/{roomId}"]["post"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: UpdateRoomConfig
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.UpdateRoomConfigRequest;
+            import dev.hathora.cloud_api.models.operations.UpdateRoomConfigResponse;
+            import dev.hathora.cloud_api.models.shared.*;
+            import dev.hathora.cloud_api.models.shared.Security;
+            import dev.hathora.cloud_api.models.shared.UpdateRoomConfigParams;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .security(Security.builder()
+                                .hathoraDevToken("<YOUR_BEARER_TOKEN_HERE>")
+                                .build())
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        UpdateRoomConfigResponse res = sdk.updateRoomConfig()
+                            .updateRoomConfigParams(UpdateRoomConfigParams.builder()
+                                .roomConfig("{\"name\":\"my-room\"}")
+                                .build())
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .roomId("2swovpy1fnunu")
+                            .call();
+
+                        // handle response
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/auth/v1/{appId}/login/google"]["post"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: LoginGoogle
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.LoginGoogleRequest;
+            import dev.hathora.cloud_api.models.operations.LoginGoogleResponse;
+            import dev.hathora.cloud_api.models.shared.*;
+            import dev.hathora.cloud_api.models.shared.LoginGoogleRequest;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        LoginGoogleResponse res = sdk.loginGoogle()
+                            .loginGoogleRequest(LoginGoogleRequest.builder()
+                                .idToken("eyJhbGciOiJSUzI1NiIsImtpZCI6ImZkNDhhNzUxMzhkOWQ0OGYwYWE2MzVlZjU2OWM0ZTE5NmY3YWU4ZDYiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJhY2NvdW50cy5nb29nbGUuY29tIiwiYXpwIjoiODQ4NDEyODI2Nzg4LW00bXNyYjZxNDRkbTJ1ZTNrZ3Z1aTBmcTdrZGE1NWxzLmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiYXVkIjoiODQ4NDEyODI2Nzg4LW00bXNyYjZxNDRkbTJ1ZTNrZ3Z1aTBmcTdrZGE1NWxzLmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTE0NTQyMzMwNzI3MTU2MTMzNzc2IiwiZW1haWwiOiJocGFdkeivmeuzQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJhdF9oYXNoIjoidno1NGhhdTNxbnVR")
+                                .build())
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .call();
+
+                        if (res.loginResponse().isPresent()) {
+                            // handle response
+                        }
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/lobby/v2/{appId}/create/local"]["post"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: CreateLocalLobby
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.CreateLocalLobbyRequest;
+            import dev.hathora.cloud_api.models.operations.CreateLocalLobbyRequestBody;
+            import dev.hathora.cloud_api.models.operations.CreateLocalLobbyResponse;
+            import dev.hathora.cloud_api.models.operations.CreateLocalLobbySecurity;
+            import dev.hathora.cloud_api.models.shared.*;
+            import dev.hathora.cloud_api.models.shared.LobbyInitialConfig;
+            import dev.hathora.cloud_api.models.shared.Region;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        CreateLocalLobbyResponse res = sdk.createLocalLobby()
+                            .security(CreateLocalLobbySecurity.builder()
+                                .playerAuth("<YOUR_BEARER_TOKEN_HERE>")
+                                .build())
+                            .requestBody(CreateLocalLobbyRequestBody.builder()
+                                .initialConfig(LobbyInitialConfig.builder()
+                                        .build())
+                                .region(Region.WASHINGTON_DC)
+                                .build())
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .roomId("2swovpy1fnunu")
+                            .call();
+
+                        if (res.lobby().isPresent()) {
+                            // handle response
+                        }
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/logs/v1/{appId}/process/{processId}"]["get"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: GetLogsForProcess
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.GetLogsForProcessRequest;
+            import dev.hathora.cloud_api.models.operations.GetLogsForProcessResponse;
+            import dev.hathora.cloud_api.models.shared.*;
+            import dev.hathora.cloud_api.models.shared.Security;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .security(Security.builder()
+                                .hathoraDevToken("<YOUR_BEARER_TOKEN_HERE>")
+                                .build())
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        GetLogsForProcessRequest req = GetLogsForProcessRequest.builder()
+                            .processId("cbfcddd2-0006-43ae-996c-995fff7bed2e")
+                            .follow(false)
+                            .tailLines(100)
+                            .build();
+
+                        GetLogsForProcessResponse res = sdk.getLogsForProcess()
+                            .request(req)
+                            .call();
+
+                        if (res.res().isPresent()) {
+                            // handle response
+                        }
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/processes/v2/{appId}/list/latest"]["get"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: GetLatestProcesses
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.GetLatestProcessesRequest;
+            import dev.hathora.cloud_api.models.operations.GetLatestProcessesResponse;
+            import dev.hathora.cloud_api.models.shared.*;
+            import dev.hathora.cloud_api.models.shared.ProcessStatus;
+            import dev.hathora.cloud_api.models.shared.Region;
+            import dev.hathora.cloud_api.models.shared.Security;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .security(Security.builder()
+                                .hathoraDevToken("<YOUR_BEARER_TOKEN_HERE>")
+                                .build())
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        GetLatestProcessesResponse res = sdk.getLatestProcesses()
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .region(java.util.List.of(
+                                Region.SINGAPORE))
+                            .status(java.util.List.of(
+                                ProcessStatus.DRAINING))
+                            .call();
+
+                        if (res.classes().isPresent()) {
+                            // handle response
+                        }
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/rooms/v2/{appId}/connectioninfo/{roomId}"]["get"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: GetConnectionInfo
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.GetConnectionInfoRequest;
+            import dev.hathora.cloud_api.models.operations.GetConnectionInfoResponse;
+            import dev.hathora.cloud_api.models.shared.*;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        GetConnectionInfoResponse res = sdk.getConnectionInfo()
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .roomId("2swovpy1fnunu")
+                            .call();
+
+                        if (res.connectionInfoV2().isPresent()) {
+                            // handle response
+                        }
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/rooms/v1/{appId}/connectioninfo/{roomId}"]["get"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: GetConnectionInfoDeprecated
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.GetConnectionInfoDeprecatedRequest;
+            import dev.hathora.cloud_api.models.operations.GetConnectionInfoDeprecatedResponse;
+            import dev.hathora.cloud_api.models.shared.*;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        GetConnectionInfoDeprecatedResponse res = sdk.getConnectionInfoDeprecated()
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .roomId("2swovpy1fnunu")
+                            .call();
+
+                        if (res.connectionInfo().isPresent()) {
+                            // handle response
+                        }
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/rooms/v1/{appId}/list/{processId}/inactive"]["get"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: GetInactiveRoomsForProcessDeprecated
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.GetInactiveRoomsForProcessDeprecatedRequest;
+            import dev.hathora.cloud_api.models.operations.GetInactiveRoomsForProcessDeprecatedResponse;
+            import dev.hathora.cloud_api.models.shared.*;
+            import dev.hathora.cloud_api.models.shared.Security;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .security(Security.builder()
+                                .hathoraDevToken("<YOUR_BEARER_TOKEN_HERE>")
+                                .build())
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        GetInactiveRoomsForProcessDeprecatedResponse res = sdk.getInactiveRoomsForProcessDeprecated()
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .processId("cbfcddd2-0006-43ae-996c-995fff7bed2e")
+                            .call();
+
+                        if (res.classes().isPresent()) {
+                            // handle response
+                        }
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/billing/v1/balance"]["get"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: GetBalance
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.GetBalanceResponse;
+            import dev.hathora.cloud_api.models.shared.*;
+            import dev.hathora.cloud_api.models.shared.Security;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .security(Security.builder()
+                                .hathoraDevToken("<YOUR_BEARER_TOKEN_HERE>")
+                                .build())
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        GetBalanceResponse res = sdk.getBalance()
+                            .call();
+
+                        if (res.number().isPresent()) {
+                            // handle response
+                        }
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/builds/v1/{appId}/create"]["post"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: CreateBuild
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.CreateBuildRequest;
+            import dev.hathora.cloud_api.models.operations.CreateBuildResponse;
+            import dev.hathora.cloud_api.models.shared.*;
+            import dev.hathora.cloud_api.models.shared.CreateBuildParams;
+            import dev.hathora.cloud_api.models.shared.Security;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .security(Security.builder()
+                                .hathoraDevToken("<YOUR_BEARER_TOKEN_HERE>")
+                                .build())
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        CreateBuildResponse res = sdk.createBuild()
+                            .createBuildParams(CreateBuildParams.builder()
+                                .buildTag("0.1.14-14c793")
+                                .build())
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .call();
+
+                        if (res.build().isPresent()) {
+                            // handle response
+                        }
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/lobby/v2/{appId}/setState/{roomId}"]["post"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: SetLobbyState
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.SetLobbyStateRequest;
+            import dev.hathora.cloud_api.models.operations.SetLobbyStateResponse;
+            import dev.hathora.cloud_api.models.shared.*;
+            import dev.hathora.cloud_api.models.shared.Security;
+            import dev.hathora.cloud_api.models.shared.SetLobbyStateParams;
+            import dev.hathora.cloud_api.models.shared.SetLobbyStateParamsState;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .security(Security.builder()
+                                .hathoraDevToken("<YOUR_BEARER_TOKEN_HERE>")
+                                .build())
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        SetLobbyStateResponse res = sdk.setLobbyState()
+                            .setLobbyStateParams(SetLobbyStateParams.builder()
+                                .state(SetLobbyStateParamsState.builder()
+                                        .build())
+                                .build())
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .roomId("2swovpy1fnunu")
+                            .call();
+
+                        if (res.lobby().isPresent()) {
+                            // handle response
+                        }
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/lobby/v3/{appId}/create"]["post"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: CreateLobby
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.CreateLobbyRequest;
+            import dev.hathora.cloud_api.models.operations.CreateLobbyResponse;
+            import dev.hathora.cloud_api.models.operations.CreateLobbySecurity;
+            import dev.hathora.cloud_api.models.shared.*;
+            import dev.hathora.cloud_api.models.shared.CreateLobbyV3Params;
+            import dev.hathora.cloud_api.models.shared.LobbyVisibility;
+            import dev.hathora.cloud_api.models.shared.Region;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        CreateLobbyRequest req = CreateLobbyRequest.builder()
+                            .createLobbyV3Params(CreateLobbyV3Params.builder()
+                                    .region(Region.SEATTLE)
+                                    .visibility(LobbyVisibility.PRIVATE_)
+                                    .roomConfig("{\"name\":\"my-room\"}")
+                                    .build())
+                            .roomId("2swovpy1fnunu")
+                            .shortCode("LFG4")
+                            .build();
+
+                        CreateLobbyResponse res = sdk.createLobby()
+                            .request(req)
+                            .security(CreateLobbySecurity.builder()
+                                .playerAuth("<YOUR_BEARER_TOKEN_HERE>")
+                                .build())
+                            .call();
+
+                        if (res.lobbyV3().isPresent()) {
+                            // handle response
+                        }
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/lobby/v3/{appId}/list/public"]["get"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: ListActivePublicLobbies
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.ListActivePublicLobbiesRequest;
+            import dev.hathora.cloud_api.models.operations.ListActivePublicLobbiesResponse;
+            import dev.hathora.cloud_api.models.shared.*;
+            import dev.hathora.cloud_api.models.shared.Region;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        ListActivePublicLobbiesResponse res = sdk.listActivePublicLobbies()
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .region(Region.SEATTLE)
+                            .call();
+
+                        if (res.classes().isPresent()) {
+                            // handle response
+                        }
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/processes/v2/{appId}/info/{processId}"]["get"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: GetProcessInfo
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.GetProcessInfoRequest;
+            import dev.hathora.cloud_api.models.operations.GetProcessInfoResponse;
+            import dev.hathora.cloud_api.models.shared.*;
+            import dev.hathora.cloud_api.models.shared.Security;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .security(Security.builder()
+                                .hathoraDevToken("<YOUR_BEARER_TOKEN_HERE>")
+                                .build())
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        GetProcessInfoResponse res = sdk.getProcessInfo()
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .processId("cbfcddd2-0006-43ae-996c-995fff7bed2e")
+                            .call();
+
+                        if (res.processV2().isPresent()) {
+                            // handle response
+                        }
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/billing/v1/invoices"]["get"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: GetInvoices
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.GetInvoicesResponse;
+            import dev.hathora.cloud_api.models.shared.*;
+            import dev.hathora.cloud_api.models.shared.Security;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .security(Security.builder()
+                                .hathoraDevToken("<YOUR_BEARER_TOKEN_HERE>")
+                                .build())
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        GetInvoicesResponse res = sdk.getInvoices()
+                            .call();
+
+                        if (res.classes().isPresent()) {
+                            // handle response
+                        }
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/deployments/v1/{appId}/latest"]["get"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: GetLatestDeployment
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.GetLatestDeploymentRequest;
+            import dev.hathora.cloud_api.models.operations.GetLatestDeploymentResponse;
+            import dev.hathora.cloud_api.models.shared.*;
+            import dev.hathora.cloud_api.models.shared.Security;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .security(Security.builder()
+                                .hathoraDevToken("<YOUR_BEARER_TOKEN_HERE>")
+                                .build())
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        GetLatestDeploymentResponse res = sdk.getLatestDeployment()
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .call();
+
+                        if (res.deployment().isPresent()) {
+                            // handle response
+                        }
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/lobby/v1/{appId}/list"]["get"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: ListActivePublicLobbiesDeprecatedV1
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.ListActivePublicLobbiesDeprecatedV1Request;
+            import dev.hathora.cloud_api.models.operations.ListActivePublicLobbiesDeprecatedV1Response;
+            import dev.hathora.cloud_api.models.shared.*;
+            import dev.hathora.cloud_api.models.shared.Region;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        ListActivePublicLobbiesDeprecatedV1Response res = sdk.listActivePublicLobbiesDeprecatedV1()
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .local(false)
+                            .region(Region.TOKYO)
+                            .call();
+
+                        if (res.classes().isPresent()) {
+                            // handle response
+                        }
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/lobby/v2/{appId}/info/{roomId}"]["get"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: GetLobbyInfo
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.GetLobbyInfoRequest;
+            import dev.hathora.cloud_api.models.operations.GetLobbyInfoResponse;
+            import dev.hathora.cloud_api.models.shared.*;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        GetLobbyInfoResponse res = sdk.getLobbyInfo()
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .roomId("2swovpy1fnunu")
+                            .call();
+
+                        if (res.lobby().isPresent()) {
+                            // handle response
+                        }
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
+  - target: $["paths"]["/processes/v1/{appId}/info/{processId}"]["get"]
+    update:
+      x-codeSamples:
+        - lang: java
+          label: GetProcessInfoDeprecated
+          source: |-
+            package hello.world;
+
+            import dev.hathora.cloud_api.Hathora-Cloud;
+            import dev.hathora.cloud_api.models.operations.*;
+            import dev.hathora.cloud_api.models.operations.GetProcessInfoDeprecatedRequest;
+            import dev.hathora.cloud_api.models.operations.GetProcessInfoDeprecatedResponse;
+            import dev.hathora.cloud_api.models.shared.*;
+            import dev.hathora.cloud_api.models.shared.Security;
+            import java.math.BigDecimal;
+            import java.math.BigInteger;
+            import java.time.LocalDate;
+            import java.time.OffsetDateTime;
+            import java.util.Optional;
+            import static java.util.Map.entry;
+
+            public class Application {
+
+                public static void main(String[] args) {
+                    try {
+                        HathoraCloud sdk = HathoraCloud.builder()
+                            .security(Security.builder()
+                                .hathoraDevToken("<YOUR_BEARER_TOKEN_HERE>")
+                                .build())
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .build();
+
+                        GetProcessInfoDeprecatedResponse res = sdk.getProcessInfoDeprecated()
+                            .appId("app-af469a92-5b45-4565-b3c4-b79878de67d2")
+                            .processId("cbfcddd2-0006-43ae-996c-995fff7bed2e")
+                            .call();
+
+                        if (res.process().isPresent()) {
+                            // handle response
+                        }
+                    } catch (dev.hathora.cloud_api.models.errors.SDKError e) {
+                        // handle exception
+                    } catch (Exception e) {
+                        // handle exception
+                    }
+                }
+            }
