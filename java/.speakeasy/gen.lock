@@ -3,19 +3,19 @@ id: f172ccce-eb7f-4b09-9edc-bb38552e4918
 management:
   docChecksum: 94c6fe0617e2b9f13f609791ca3e1d37
   docVersion: 0.0.1
-  speakeasyVersion: 1.221.0
-  generationVersion: 2.287.0
-  releaseVersion: 2.3.0
-  configChecksum: 7f493a4dad2bc4c6e4ad51257a3587b7
+  speakeasyVersion: 1.231.0
+  generationVersion: 2.292.0
+  releaseVersion: 2.4.0
+  configChecksum: 1d69be6ecee7fee200b0b09d3ae58d95
 features:
   java:
     constsAndDefaults: 0.1.1
-    core: 3.16.1
+    core: 3.16.2
     deprecations: 2.81.1
     flattening: 2.81.1
     globalSecurity: 2.82.5
     globalServerURLs: 2.82.1
-    globals: 2.81.1
+    globals: 2.82.1
     methodSecurity: 2.82.1
     unions: 0.0.3
 generatedFiles:

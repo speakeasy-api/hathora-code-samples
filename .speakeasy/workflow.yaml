@@ -4,12 +4,12 @@ sources:
         inputs:
             - location: https://hathora.dev/swagger.json
 targets:
-    # java-target:
-    #     target: java
-    #     source: openapi
-    #     codeSamples:
-    #         output: codeSamples.yaml
-    #     output: java
+    java-target:
+        target: java
+        source: openapi
+        codeSamples:
+            output: codeSamples.yaml
+        output: java
     typescript-target:
         target: typescript
         source: openapi
