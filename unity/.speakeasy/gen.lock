@@ -3,19 +3,19 @@ id: dd36808f-2257-4786-a741-415a14890473
 management:
   docChecksum: 94c6fe0617e2b9f13f609791ca3e1d37
   docVersion: 0.0.1
-  speakeasyVersion: 1.221.0
-  generationVersion: 2.287.0
-  releaseVersion: 0.28.4
-  configChecksum: 40a17d7fed5223c5bd83bd23cb282af5
+  speakeasyVersion: 1.231.0
+  generationVersion: 2.292.0
+  releaseVersion: 0.29.0
+  configChecksum: b17836067e7747491855caef36a9acf6
 features:
   unity:
-    core: 1.4.2
+    core: 1.5.0
     deprecations: 0.0.2
     globalSecurity: 0.2.4
     globalServerURLs: 0.0.4
-    globals: 0.0.2
+    globals: 0.1.1
     methodSecurity: 0.1.1
-    unions: 0.0.1
+    unions: 0.0.2
 generatedFiles:
   - HathoraCloud/AppV1.cs
   - HathoraCloud/AuthV1.cs
@@ -36,12 +36,14 @@ generatedFiles:
   - HathoraCloud/OrgTokensV1.cs
   - HathoraCloud/HathoraCloudSDK.cs
   - global.json
-  - HathoraCloud/Utils/BigIntSerializer.cs
+  - HathoraCloud.sln
+  - HathoraCloud/Utils/AnyDeserializer.cs
+  - HathoraCloud/Utils/BigIntStrConverter.cs
   - HathoraCloud/Utils/DateOnly.cs
   - HathoraCloud/Utils/DateOnlyConverter.cs
-  - HathoraCloud/Utils/DecimalSerializer.cs
+  - HathoraCloud/Utils/DecimalStrConverter.cs
   - HathoraCloud/Utils/DownloadHandlerStream.cs
-  - HathoraCloud/Utils/EnumSerializer.cs
+  - HathoraCloud/Utils/EnumConverter.cs
   - HathoraCloud/Utils/FlexibleObjectDeserializer.cs
   - HathoraCloud/Utils/HeaderSerializer.cs
   - HathoraCloud/Utils/IsoDateTimeSerializer.cs
@@ -53,7 +55,6 @@ generatedFiles:
   - HathoraCloud/Utils/URLBuilder.cs
   - HathoraCloud/Utils/Utilities.cs
   - HathoraCloud/HathoraCloud.csproj
-  - HathoraCloud.sln
   - HathoraCloud/Models/Operations/CreateAppResponse.cs
   - HathoraCloud/Models/Operations/DeleteAppRequest.cs
   - HathoraCloud/Models/Operations/DeleteAppResponse.cs

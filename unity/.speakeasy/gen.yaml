@@ -10,8 +10,9 @@ generation:
   auth:
     oAuth2ClientCredentialsEnabled: false
 unity:
-  version: 0.28.4
+  version: 0.29.0
   author: Hathora
+  company: ""
   dotnetVersion: net5.0
   flattenGlobalSecurity: false
   imports:
@@ -26,3 +27,4 @@ unity:
   maxMethodParams: 0
   outputModelSuffix: output
   packageName: hathora-cloud
+  product: ""
